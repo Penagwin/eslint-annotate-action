@@ -34,9 +34,7 @@ Toolkit.run(async (tools) => {
 
 
     // Add report to job summary
-    if (markdownReportOnStepSummary) {
-      await addSummary(analyzedReport.markdown)
-    }
+    await addSummary(analyzedReport.markdown)
 
     // Finally, close the GitHub check as completed
     await closeStatusCheck(
