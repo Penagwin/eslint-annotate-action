@@ -33,6 +33,8 @@ Toolkit.run(async (tools) => {
     await addAnnotationsToStatusCheck(annotations, checkId)
 
 
+    tools.log.info(`${analyzedReport.markdown}`)
+
     // Add report to job summary
     await addSummary(analyzedReport.markdown)
 
@@ -41,7 +43,7 @@ Toolkit.run(async (tools) => {
       conclusion,
       checkId,
       analyzedReport.summary,
-      markdownReportOnStepSummary ? analyzedReport.markdown : '',
+      analyzedReport.markdown
     )
 
     // Fail the Action if the report analysis conclusions is failure
